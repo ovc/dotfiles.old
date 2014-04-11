@@ -1,4 +1,4 @@
 #!/bin/sh -x
-for line in $(cat file.ls); do
-ls $line 
-done
+while read list; do
+ls -la $list
+done<file.tmp
