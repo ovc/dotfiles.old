@@ -15,7 +15,17 @@
 # --reget	Re-get files from existing list to OS.
 
 basedir=$(dirname $0)
-baseos=gentoo
+
+uname=$(uname -a)
+if echo $uname grep -iq gentoo; then
+	baseos=gentoo
+elif echo $uname grep -iq debian; then
+	baseos=debian
+elif echo $uname grep -iq ubuntu; then
+	baseos=ubuntu
+else
+	baseos=linux
+fi>/dev/null 2>&1
 
 (cd $basedir; git checkout $1 || (git branch $1 && git checkout $1)) > /dev/null 2>&1
 

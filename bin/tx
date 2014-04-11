@@ -1,0 +1,4 @@
+#!/bin/sh -x
+for line in $(cat file.ls); do
+ls $line 
+done

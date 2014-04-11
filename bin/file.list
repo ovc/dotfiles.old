@@ -9,5 +9,3 @@ $HOME/.gitconfig
 /etc/portage/package.keywords
 $(ls -da1 /usr/src/linux-*-gentoo/.* | grep config)
 $(find /etc/kernels -type f)
-
-
