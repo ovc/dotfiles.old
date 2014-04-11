@@ -1,4 +1,4 @@
 #!/bin/sh -x
-while read list; do
-ls -la $list
-done<file.tmp
+while read -r list; do
+eval ls -la $list
+done<file.ls
