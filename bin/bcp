@@ -1,5 +1,18 @@
 #!/bin/sh -x
-#bckp pcbta gentoo
+#
+# Working sintax:
+#
+# Put:
+# $ bcp [ --put-file | --put-list | --reput ] 
+# --put-file	Adding file to repo. Exmpl: $ bcp --put-file /etc/hosts
+# --put-list	Adding files from existing list to repo.
+# --reput	Adding files from existing list to repo.
+#
+# Restore:
+# $ bcp [ --get-file | --get-list | --reget ] 
+# --get-file	Get file from repo. Exmpl: $ bcp --get-file /etc/hosts
+# --get-list	Get all files from existing list to OS.
+# --reget	Re-get files from existing list to OS.
 
 basedir=$(dirname $0)
 baseos=gentoo

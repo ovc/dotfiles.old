@@ -1,0 +1,13 @@
+$HOME/.vimrc
+$HOME/.zshrc
+$HOME/.tmux.conf
+$HOME/.gitconfig
+/var/lib/portage/world
+/etc/portage/make.conf
+/etc/portage/package.use
+/etc/portage/package.mask
+/etc/portage/package.keywords
+$(ls -da1 /usr/src/linux-*-gentoo/.* | grep config)
+$(find /etc/kernels -type f)
+
+
