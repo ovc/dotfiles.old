@@ -1,5 +1,5 @@
 #!/bin/sh -x
-#working script
+#bckp pcbta gentoo
 
 basedir=$(dirname $0)
 baseos=gentoo
