@@ -27,27 +27,39 @@ else
 	baseos=linux
 fi>/dev/null 2>&1
 
-(cd $basedir; git checkout $1 || (git branch $1 && git checkout $1)) > /dev/null 2>&1
+echo $baseos
 
-while read filepath; do
-        mkdir -p $basedir/$baseos${filepath%/*}
-        cp -f $filepath $basedir/$baseos${filepath%/*}/ > /dev/null 2>&1
 
-done <<EOL
-$HOME/.vimrc
-$HOME/.zshrc
-$HOME/.tmux.conf
-$HOME/.gitconfig
-/var/lib/portage/world
-/etc/portage/make.conf
-/etc/portage/package.use
-/etc/portage/package.mask
-/etc/portage/package.keywords
-$(ls -da1 /usr/src/linux-*-gentoo/.* | grep config)
-$(find /etc/kernels -type f)
-EOL
+for filepath in $(cat files.list $baseos.list); do
+	ls -la $filepath
+done
+#while read filepath; do
+#	ls -la $filepath
+#done <$baseos.list
 
-(cd $basedir; git status | grep -qF 'working directory clean' || (git add *; git add .*; git ls-files --deleted -z | xargs -0 git rm; git commit -m "Commit via Cron at $(date +%d.%m.%Y-%H:%M)" )) > /dev/null 2>&1
+#(cd $basedir; git checkout $1 || (git branch $1 && git checkout $1)) > /dev/null 2>&1
+#
+#while read filepath; do
+#        mkdir -p $basedir/$baseos${filepath%/*}
+#        cp -f $filepath $basedir/$baseos${filepath%/*}/ > /dev/null 2>&1
+#
+#done <<EOL
+#$HOME/.vimrc
+#$HOME/.zshrc
+#$HOME/.tmux.conf
+#$HOME/.gitconfig
+#/var/lib/portage/world
+#/etc/portage/make.conf
+#/etc/portage/package.use
+#/etc/portage/package.mask
+#/etc/portage/package.keywords
+#$(ls -da1 /usr/src/linux-*-gentoo/.* | grep config)
+#$(find /etc/kernels -type f)
+#EOL
+#
+#(cd $basedir; git status | grep -qF 'working directory clean' || (git add *; git add .*; git ls-files --deleted -z | xargs -0 git rm; git commit -m "Commit via Cron at $(date +%d.%m.%Y-%H:%M)" )) > /dev/null 2>&1
+
+###################################################################
 
 #git status | grep -qF 'working directory clean' || echo "DIRTY"
 #rsync

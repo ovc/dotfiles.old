@@ -1,4 +1,10 @@
 #!/bin/sh -x
-while read -r list; do
-eval ls -la $list
-done<file.ls
+Baseos () {
+	baseos=$1
+}
+Baseos "gentoo" 
+echo $baseos
+
+#while read -r list; do
+#eval ls -la $list
+#done<file.ls

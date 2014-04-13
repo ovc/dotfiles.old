@@ -1,0 +1,5 @@
+/var/lib/portage/world
+/etc/portage/make.conf
+/etc/portage/package.use
+/etc/portage/package.mask
+/etc/portage/package.keywords
