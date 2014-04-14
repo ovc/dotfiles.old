@@ -1,0 +1,7 @@
+[user]
+	name = Roman Ovchinnikov
+	email = ovc@list.ru
+[core]
+	editor = vim
+[merge]
+	tool = vimdiff

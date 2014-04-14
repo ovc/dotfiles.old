@@ -1,0 +1,17 @@
+#sys-apps/dbus -systemd
+sys-devel/gcc -gtk
+net-analyzer/nmap -gtk
+dev-vcs/git -gtk -perl
+www-client/firefox -crashreporter -libnotify -startup-notification
+app-portage/eix optimization sqlite
+net-misc/networkmanager -bluetooth 
+app-editors/vim vim-pager
+# required by www-client/chromium-33.0.1750.152
+# required by chromium (argument)
+>=sys-libs/zlib-1.2.8-r1 minizip
+# required by www-client/chromium-33.0.1750.152
+# required by chromium (argument)
+=dev-libs/libxml2-2.9.1-r1 icu
+# required by www-client/firefox-24.4.0[gstreamer]
+# required by firefox (argument)
+>=media-plugins/gst-plugins-meta-0.10-r8:0.10 ffmpeg
